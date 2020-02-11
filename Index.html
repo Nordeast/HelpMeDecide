@@ -1,0 +1,23 @@
+<html>
+  <header></header>
+  <div id="app">
+    <ul>
+      <choice-item
+        v-for="choice in choices"
+        :identifier="choice.identifier"
+        :title="choice.title"
+        @delete-choice="deleteChoice"
+      ></choice-item>
+    </ul>
+    <input v-model="newChoice" @keyup.enter="addChoice" />
+    <button @click="addChoice">Add Choice</button>
+    <button @click="pickem">Choose!</button>
+    <p>{{ winningChoice }}</p>
+  </div>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="bracketizer.js"></script>
+    <script src="taskItem.js"></script>
+    <script src="Index.js"></script>
+  </body>
+</html>
